@@ -5,6 +5,8 @@ library(tidyverse)
 
 # Import Data -------------------------------------------------------------
 
+# Great Job!
+
 survey_data_raw <-
   read_csv("data-raw/survey_data.csv")
 
