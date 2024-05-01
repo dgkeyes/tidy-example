@@ -1,7 +1,3 @@
-# TODO: make demographics data frame
-# TODO: make function to import data
-# TODO: show importing multiple years of data
-
 # Load Packages -----------------------------------------------------------
 
 library(tidyverse)
