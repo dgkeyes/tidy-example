@@ -1,11 +1,13 @@
+# TODO: make demographics data frame
+# TODO: make function to import data
+# TODO: show importing multiple years of data
+
 # Load Packages -----------------------------------------------------------
 
 library(tidyverse)
 
 
 # Import Data -------------------------------------------------------------
-
-# Great Job!
 
 survey_data_raw <-
   read_csv("data-raw/survey_data.csv")
