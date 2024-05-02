@@ -1,4 +1,4 @@
-respondent_id,location,pre_question_1,post_question_1,pre_question_2,post_question_2,satisfaction_question_1,satisfaction_question_3,favorite_parts
+respondent_id,location,pre_question_1,post_question_1,pre_question_3,post_question_3,satisfaction_question_1,satisfaction_question_2,favorite_parts
 1,"Portland, OR",5,1,2,2,8,7,Instructors
 2,"Portland, OR",1,2,3,3,4,4,Instructors
 3,"Portland, OR",2,3,4,3,1,2,Instructors

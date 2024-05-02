@@ -1,6 +1,8 @@
 ---
 title: "Report"
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r}
@@ -8,7 +10,54 @@ library(tidyverse)
 ```
 
 ```{r}
-pre_post_data <- read_rds("data/pre_post_data.rds")
+demographics <-
+  read_rds("data/demographics.rds")
+
+# favorite_parts <-
+#   read_rds("data/favorite_parts.rds")
+
+pre_post_data <-
+  read_rds("data/pre_post_data.rds")
 ```
 
+# Pre Post
 
+```{r}
+pre_post_plot <- function(data_year) {
+  pre_post_data |>
+    left_join(
+      demographics,
+      join_by(respondent_id, year)
+    ) |>
+    filter(year == data_year) |>
+    group_by(question_number, timing, city) |>
+    summarize(avg_rating = mean(rating, na.rm = TRUE)) |>
+    ungroup() |>
+    ggplot(aes(
+      x = avg_rating,
+      y = question_number,
+      color = timing
+    )) +
+    geom_point() +
+    facet_wrap(vars(city))
+}
+
+pre_post_plot(2022)
+```
+
+# Favorite Parts
+
+```{r}
+favorite_parts |>
+  left_join(
+    demographics,
+    join_by(respondent_id)
+  ) |>
+  count(city, favorite_parts) |>
+  ggplot(aes(
+    x = favorite_parts,
+    y = n
+  )) +
+  geom_col() +
+  facet_wrap(vars(city))
+```
